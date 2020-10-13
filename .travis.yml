@@ -29,4 +29,5 @@ before_script:
 script:
   - valgrind --track-origins=yes --leak-check=full ./testing
   - cppcheck --enable=warning,performance,portability,style --language=c++ ./project
+  - cd "${TRAVIS_BUILD_DIR}"
   - ./linters/run.sh --local
