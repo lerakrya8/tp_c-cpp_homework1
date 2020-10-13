@@ -9,28 +9,28 @@ extern "C" {
     #include "diet.h"
 }
 
-TEST(Char_strings, test_additive) {
+TEST(Convertion_to_enum_classes, class_additives) {
     char additive1[] = "Без";
     char additive2[] = "Красители";
     EXPECT_EQ(Additives(No_additives), char_additive(additive1));
     EXPECT_EQ(Additives(Colorants), char_additive(additive2));
 }
 
-TEST(Char_strings, test_vitamin) {
+TEST(Convertion_to_enum_classes, class_vitamins) {
     char vitamin1[] = "E";
     char vitamin2[] = "K";
     EXPECT_EQ(Vitamins(E), char_vitamin(vitamin1));
     EXPECT_EQ(Vitamins(K), char_vitamin(vitamin2));
 }
 
-TEST(Char_strings, test_mineral) {
+TEST(Convertion_to_enum_classes, class_minerals) {
     char mineral1[] = "Кальций";
     char mineral2[] = "Фосфор";
     EXPECT_EQ(Minerals(Calcium), char_mineral(mineral1));
     EXPECT_EQ(Minerals(Phosphorus), char_mineral(mineral2));
 }
 
-TEST(Find_nessesary_param, different_additives) {
+TEST(Find_nessesary_param, find_wishful_additives) {
     Products* products = initialization();
     char additive1[] = "Антиоксиданты";
     char additive2[] = "Загуститель";
@@ -41,7 +41,7 @@ TEST(Find_nessesary_param, different_additives) {
     free(products);
 }
 
-TEST(Find_nessesary_param, different_vitamins) {
+TEST(Find_nessesary_param, find_wishful_vitamins) {
     Products* products = initialization();
     char vitamin1[] = "B9";
     char vitamin2[] = "B7";
@@ -53,7 +53,7 @@ TEST(Find_nessesary_param, different_vitamins) {
     free(products);
 }
 
-TEST(Find_nessesary_param, different_minerals) {
+TEST(Find_nessesary_param, find_wishful_minerals) {
     Products* products = initialization();
     char mineral1[] = "Калий";
     char mineral2[] = "Хром";
