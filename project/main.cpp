@@ -65,6 +65,9 @@ TEST(Find_nessesary_param, find_wishful_minerals) {
     free(products);
 }
 
+// ноль - означает, что неважно сколько бжу и калорий
+// пользователь вводит "-", программа в отдельной функции обрабатывает это и зануляет значения
+
 TEST(Calculations, proteins) {
     Products* products = initialization();
     int proteins1 = 0;
