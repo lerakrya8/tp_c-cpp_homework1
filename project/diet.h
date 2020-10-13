@@ -53,7 +53,6 @@ typedef struct {                            // банан
     char name[35];
 } Products;
 
-
 Products *initialization();
 enum Additives char_additive(char* additive);
 enum Vitamins char_vitamin(char* vitamin);

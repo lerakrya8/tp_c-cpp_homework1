@@ -23,7 +23,6 @@ before_script:
   - sudo make
   - sudo cp *.a /usr/lib
   - cd "${TRAVIS_BUILD_DIR}"
-  - cd tp_c-cpp_homework1
   - cmake .
   - make
 
