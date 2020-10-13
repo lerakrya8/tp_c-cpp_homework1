@@ -1,5 +1,5 @@
-#ifndef  _HOME_LERAKRY_TP_PROGRAM_C___DZ1_PROJECT_DIET_H_
-#define  _HOME_LERAKRY_TP_PROGRAM_C___DZ1_PROJECT_DIET_H_
+#ifndef  PROJECT_DIET_H_
+#define  PROJECT_DIET_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -70,4 +70,4 @@ char* search_products(int proteins, int fats,
                    char* additive, char* vitamin, char* mineral, char* result_string);
 
 
-#endif  //  _HOME_LERAKRY_TP_PROGRAM_C___DZ1_PROJECT_DIET_H_
+#endif  // PROJECT_DIET_H_

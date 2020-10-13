@@ -3,6 +3,7 @@
 //
 
 #include "diet.h"
+#include <string.h>
 
 const Products banana = {2, 1, 21, 96, No_additives, E, K, Calcium,  Phosphorus, "Банан"};
 const Products coffee = {0, 0, 0, 0, No_additives, B3, B6, Potassium, Magnesium, "Кофе"};
@@ -237,8 +238,8 @@ char* search_products(int proteins, int fats,
             fats -= types[i].fats;
             carbohydrates -= types[i].carbohydrates;
             max_calories -= types[i].calories;
-            strcat(result_string, types[i].name);
-            strcat(result_string, ", ");
+            strncat(result_string, types[i].name, strlen(types[i].name));
+            strncat(result_string, ", ", 2);
         }
     }
 
