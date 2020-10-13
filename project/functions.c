@@ -250,14 +250,3 @@ char* search_products(int proteins, int fats,
     return result_string;
 }
 
-void print(char* string) {
-    if ( strlen(string) ) {
-        printf("%s", string);
-    } else {
-            printf("%s", "К сожалению, по вашим параметрам ничего не найдено");
-        }
-}
-
-
-// написать проверку бжу, калорий
-

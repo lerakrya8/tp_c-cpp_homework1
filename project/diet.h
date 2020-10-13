@@ -69,7 +69,6 @@ bool right_calories(Products product, int min_calories, int max_calories);
 char* search_products(int proteins, int fats,
                    int carbohydrates, int min_calories, int max_calories,
                    char* additive, char* vitamin, char* mineral, char* result_string);
-void print(char* string);
 
 
 #endif  //  _HOME_LERAKRY_TP_PROGRAM_C___DZ1_PROJECT_DIET_H_

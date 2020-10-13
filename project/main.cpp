@@ -36,7 +36,7 @@ TEST(Find_nessesary_param, different_additives) {
     char additive2[] = "Загуститель";
     char additive3[] = "-";
     EXPECT_EQ(true, find_additives(products[8], additive1));
-    EXPECT_EQ(false, find_additives(products[3], additive2));
+    EXPECT_EQ(false, find_additives(products[6], additive2));
     EXPECT_EQ(true, find_additives(products[5], additive3));
     free(products);
 }

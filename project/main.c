@@ -21,6 +21,14 @@ int get_number() {
     return number;
 }
 
+void print(char* string) {
+    if ( strlen(string) ) {
+        printf("%s", string);
+    } else {
+        printf("%s", "К сожалению, по вашим параметрам ничего не найдено");
+    }
+}
+
 int main(void) {
     int proteins;
     int fats;

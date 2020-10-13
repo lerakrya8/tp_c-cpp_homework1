@@ -19,7 +19,8 @@ addons:
 before_script:
   - sudo apt-get install -y libgtest-dev
   - cd /usr/src/gtest
-  - sudo cmake CMakeLists.txt && sudo make
+  - sudo cmake CMakeLists.txt
+  - sudo make
   - sudo cp *.a /usr/lib
   - cd "${TRAVIS_BUILD_DIR}"
   - cd tp_c-cpp_homework1
@@ -27,6 +28,6 @@ before_script:
   - make
 
 script:
-  - ./linters/run.sh --local
   - valgrind --track-origins=yes --leak-check=full ./testing
   - cppcheck --enable=warning,performance,portability,style --language=c++ ./project
+  - ./linters/run.sh --local
