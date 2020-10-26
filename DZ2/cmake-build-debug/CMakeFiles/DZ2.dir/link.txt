@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/DZ2.dir/main.c.o CMakeFiles/DZ2.dir/functions.c.o  -o DZ2 

@@ -1,0 +1,1 @@
+/usr/bin/cc --coverage -g   CMakeFiles/DZ1.dir/project/main.c.o CMakeFiles/DZ1.dir/project/functions.c.o  -o DZ1 

@@ -1,0 +1,1 @@
+/usr/bin/c++  --coverage -g   CMakeFiles/testing.dir/project/main.cpp.o CMakeFiles/testing.dir/project/functions.c.o  -o testing  /usr/lib/libgtest.so -lpthread 

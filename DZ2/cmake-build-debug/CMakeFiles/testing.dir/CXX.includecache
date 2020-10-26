@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lerakry/tp/program_c++/DZ2/test.cpp
+gtest/gtest.h
+-
+string
+-
+sys/mman.h
+-
+utils.h
+/home/lerakry/tp/program_c++/DZ2/utils.h
+
+/home/lerakry/tp/program_c++/DZ2/utils.h
+stdbool.h
+-
+

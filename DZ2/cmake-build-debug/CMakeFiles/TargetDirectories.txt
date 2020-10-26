@@ -1,0 +1,6 @@
+/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/testing.dir
+/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/test.dir
+/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/generator.dir
+/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/DZ2.dir
