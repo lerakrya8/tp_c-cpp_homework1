@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-g++ -std=c++14 main.cpp -o create_matrix
+g++ -std=c++11 main.cpp -o create_matrix
 ./create_matrix matrix1x5 1 5
 ./create_matrix matrix3x4 3 4
 ./create_matrix matrix8x7 8 7
