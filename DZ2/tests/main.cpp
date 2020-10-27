@@ -9,11 +9,12 @@ void matrix_generation(std::ofstream& file, int rows, int columns) {
     std::mt19937 mersenne(static_cast<double>(time(nullptr)));
 
     file << rows << " " << columns << " ";
-    for (size_t i = 0; i < rows; i++)
-        for (size_t j = 0; j < columns; j++)
-        {
-            file << (mersenne() % 100'000) * 0.001 << " ";
+    for (size_t i = 0; i < rows; i++) {
+        for (size_t j = 0; j < columns; j++) {
+            file << mersenne() % 100000 * 0.001 << " ";
+
         }
+    }
 }
 
 void create_file(std::string& file_name, int rows, int columns) {
