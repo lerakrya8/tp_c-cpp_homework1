@@ -25,13 +25,22 @@ FILE* get_file(const char* file_name, const char* params) {
 }
 
 Matrix* get_matrix(FILE* file) {
+    if ( file == NULL )
+        return NULL;
+
     Matrix* matrix = (Matrix*)malloc(sizeof(Matrix) * 1);
     if ( matrix == NULL ) {
         return NULL;
     }
 
-    fscanf(file, "%d", &matrix->rows);
-    fscanf(file, "%d", &matrix->columns);
+    if ( fscanf(file, "%d", &matrix->rows) != 1 ) {
+        free(matrix);
+        return NULL;
+    }
+    if ( fscanf(file, "%d", &matrix->columns) != 1 ) {
+        free(matrix);
+        return NULL;
+    }
 
     matrix->matrix = (double**) malloc(matrix->rows * sizeof(double*));
     if ( matrix->matrix == NULL ) {
