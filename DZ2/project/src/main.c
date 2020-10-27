@@ -39,7 +39,7 @@ int main() {
     clock_t end_parall = clock();
     double time_spent_parall = (double)(end_parall - begin_parall) * 1000.0 / CLOCKS_PER_SEC;
 
-    printf("Синхронно: %g мс\n",time_spent_synch);
+    printf("Синхронно: %g мс\n", time_spent_synch);
     printf("Параллельно: %g мс", time_spent_parall);
     free_memory(a);
     free(b);
