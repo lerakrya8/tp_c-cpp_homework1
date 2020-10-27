@@ -22,9 +22,9 @@ before_script:
   - sudo cmake CMakeLists.txt
   - sudo make
   - sudo cp *.a /usr/lib
-  - cd "${TRAVIS_BUILD_DIR}"/tests
+  - cd "${TRAVIS_BUILD_DIR}"/DZ2/tests
   - bash script.sh
-  - cd "${TRAVIS_BUILD_DIR}"
+  - cd "${TRAVIS_BUILD_DIR}"/DZ2
   - cmake .
   - make
 
