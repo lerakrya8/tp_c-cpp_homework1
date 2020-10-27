@@ -43,3 +43,6 @@ add_executable(generator tests/main.cpp)
 add_executable(DZ2 project/src/main.c)
 
 target_link_libraries(DZ2 compute_parallal compute_synch)
+
+set(CMAKE_C_FLAGS "-g -Wall -Werror -Wextra -03 -fprofile-arcs -ftest-coverage")
+set(CMAKE_CXX_FLAGS  "-g -Wall -03 -fprofile-arcs -ftest-coverage")

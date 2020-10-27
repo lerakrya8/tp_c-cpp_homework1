@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "utils.h"
 #include <sys/mman.h>
+#include <time.h>
+#include <utils_parall.h>
+#include <utils_synch.h>
 
 void print(double** matrix, int rows, int columns) {
     for ( int i = 0; i < rows; ++i ) {
@@ -22,19 +25,22 @@ void print1(double* matrix, int matrix_size, int k) {
 }
 
 int main() {
-    Matrix* a = get_matrix(get_file("matrix20x30", "r"));
+    Matrix* a = get_matrix(get_file("matrix10000x5000", "r"));
     double* b = (double*)malloc((a->columns * a->rows) * sizeof(double));
     double* b1 = shared_memory(a->rows, a->columns);
 
-    print(a->matrix, a->rows, a->columns);
-    printf("%s", "Транспонированная матрица: \n");
-    b1 = split_process(a, b1);
+    clock_t begin_synch = clock();
     b = transposition(a, b);
+    clock_t end_synch = clock();
+    double time_spent_synch = (double)(end_synch - begin_synch) * 1000.0 / CLOCKS_PER_SEC;
 
-    print1(b, a->columns * a->rows, a->rows);
-    printf("%s", "Транспонированная матрица1: \n");
+    clock_t begin_parall = clock();
+    b1 = split_process(a, b1);
+    clock_t end_parall = clock();
+    double time_spent_parall = (double)(end_parall - begin_parall) * 1000.0 / CLOCKS_PER_SEC;
 
-    print1(b1, a->columns * a->rows, a->rows);
+    printf("Синхронно: %g мс\n",time_spent_synch);
+    printf("Параллельно: %g мс", time_spent_parall);
     free_memory(a);
     free(b);
     munmap(b1, a->rows * a->columns);
