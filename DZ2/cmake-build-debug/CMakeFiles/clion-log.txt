@@ -1,4 +1,4 @@
-/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lerakry/tp/program_c++/DZ2
+/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/lerakry/tp/program_c++/DZ2/cmake-build-debug
+-- Build files have been written to: /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug

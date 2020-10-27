@@ -1,4 +1,4 @@
-# Install script for directory: /home/lerakry/tp/program_c++/DZ2
+# Install script for directory: /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

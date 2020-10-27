@@ -63,10 +63,10 @@ RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lerakry/tp/program_c++/DZ2
+CMAKE_SOURCE_DIR = /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lerakry/tp/program_c++/DZ2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/DZ2.dir/depend.make
@@ -77,45 +77,32 @@ include CMakeFiles/DZ2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/DZ2.dir/flags.make
 
-CMakeFiles/DZ2.dir/main.c.o: CMakeFiles/DZ2.dir/flags.make
-CMakeFiles/DZ2.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/DZ2.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/DZ2.dir/main.c.o   -c /home/lerakry/tp/program_c++/DZ2/main.c
+CMakeFiles/DZ2.dir/project/src/main.c.o: CMakeFiles/DZ2.dir/flags.make
+CMakeFiles/DZ2.dir/project/src/main.c.o: ../project/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/DZ2.dir/project/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/DZ2.dir/project/src/main.c.o   -c /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/project/src/main.c
 
-CMakeFiles/DZ2.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/DZ2.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lerakry/tp/program_c++/DZ2/main.c > CMakeFiles/DZ2.dir/main.c.i
+CMakeFiles/DZ2.dir/project/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/DZ2.dir/project/src/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/project/src/main.c > CMakeFiles/DZ2.dir/project/src/main.c.i
 
-CMakeFiles/DZ2.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/DZ2.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lerakry/tp/program_c++/DZ2/main.c -o CMakeFiles/DZ2.dir/main.c.s
-
-CMakeFiles/DZ2.dir/functions.c.o: CMakeFiles/DZ2.dir/flags.make
-CMakeFiles/DZ2.dir/functions.c.o: ../functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/DZ2.dir/functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/DZ2.dir/functions.c.o   -c /home/lerakry/tp/program_c++/DZ2/functions.c
-
-CMakeFiles/DZ2.dir/functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/DZ2.dir/functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lerakry/tp/program_c++/DZ2/functions.c > CMakeFiles/DZ2.dir/functions.c.i
-
-CMakeFiles/DZ2.dir/functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/DZ2.dir/functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lerakry/tp/program_c++/DZ2/functions.c -o CMakeFiles/DZ2.dir/functions.c.s
+CMakeFiles/DZ2.dir/project/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/DZ2.dir/project/src/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/project/src/main.c -o CMakeFiles/DZ2.dir/project/src/main.c.s
 
 # Object files for target DZ2
 DZ2_OBJECTS = \
-"CMakeFiles/DZ2.dir/main.c.o" \
-"CMakeFiles/DZ2.dir/functions.c.o"
+"CMakeFiles/DZ2.dir/project/src/main.c.o"
 
 # External object files for target DZ2
 DZ2_EXTERNAL_OBJECTS =
 
-DZ2: CMakeFiles/DZ2.dir/main.c.o
-DZ2: CMakeFiles/DZ2.dir/functions.c.o
+DZ2: CMakeFiles/DZ2.dir/project/src/main.c.o
 DZ2: CMakeFiles/DZ2.dir/build.make
+DZ2: libcompute_parallal.so
+DZ2: libcompute_synch.a
 DZ2: CMakeFiles/DZ2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable DZ2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable DZ2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DZ2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -128,6 +115,6 @@ CMakeFiles/DZ2.dir/clean:
 .PHONY : CMakeFiles/DZ2.dir/clean
 
 CMakeFiles/DZ2.dir/depend:
-	cd /home/lerakry/tp/program_c++/DZ2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lerakry/tp/program_c++/DZ2 /home/lerakry/tp/program_c++/DZ2 /home/lerakry/tp/program_c++/DZ2/cmake-build-debug /home/lerakry/tp/program_c++/DZ2/cmake-build-debug /home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/DZ2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2 /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2 /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles/DZ2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/DZ2.dir/depend
 

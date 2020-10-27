@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/testing.dir/test.cpp.o CMakeFiles/testing.dir/functions.c.o  -o testing  /usr/lib/libgtest.so -lpthread 
+/usr/bin/c++  -g   CMakeFiles/testing.dir/tests/test.cpp.o  -o testing  -Wl,-rpath,/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug /usr/lib/libgtest.so libcompute_synch.a libcompute_parallal.so -lpthread 

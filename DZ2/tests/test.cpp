@@ -6,7 +6,8 @@
 #include <sys/mman.h>
 
 extern "C" {
-#include "utils.h"
+    #include "utils_parall.h"
+#include "utils_synch.h"
 }
 
 TEST(Read_file, compare_matrix_4x4) {
@@ -57,7 +58,6 @@ TEST(Compare_matrix, matrix_1x5) {
     if ( b1 == nullptr ) {
         return;
     }
-    printf("%d", a->columns * a->rows);
 
     double* b2 = shared_memory(a->rows, a->columns);
 
@@ -72,7 +72,7 @@ TEST(Compare_matrix, matrix_1x5) {
 }
 
 TEST(Compare_matrix, matrix_3x4) {
-    Matrix* a = get_matrix(get_file("matrix1x5", "r"));
+    Matrix* a = get_matrix(get_file("matrix3x4", "r"));
     if ( a == nullptr ) {
         return;
     }
@@ -95,7 +95,7 @@ TEST(Compare_matrix, matrix_3x4) {
 }
 
 TEST(Compare_matrix, matrix_8x7) {
-    Matrix* a = get_matrix(get_file("matrix1x5", "r"));
+    Matrix* a = get_matrix(get_file("matrix8x7", "r"));
     if ( a == nullptr ) {
         return;
     }
@@ -118,7 +118,7 @@ TEST(Compare_matrix, matrix_8x7) {
 }
 
 TEST(Compare_matrix, matrix_20x30) {
-    Matrix* a = get_matrix(get_file("matrix1x5", "r"));
+    Matrix* a = get_matrix(get_file("matrix20x30", "r"));
     if ( a == nullptr ) {
         return;
     }
@@ -140,97 +140,97 @@ TEST(Compare_matrix, matrix_20x30) {
     free(b1);
 }
 
-//TEST(Compare_matrix, matrix_100x100) {
-//    Matrix* a = get_matrix(get_file("matrix1x5", "r"));
-//    if ( a == nullptr ) {
-//        return;
-//    }
-//    auto* b1 = (double*)malloc((a->columns * a->rows) * sizeof(double));
-//    if ( b1 == nullptr ) {
-//        return;
-//    }
-//
-//    double* b2 = shared_memory(a->rows, a->columns);
-//
-//    b1 = transposition(a, b1);
-//    b2 = split_process(a, b2);
-//
-//
-//    EXPECT_EQ(true, correct_transposition(b1, b2, a->columns * a->rows));
-//
-//    munmap(b2, a->rows);
-//    free_memory(a);
-//    free(b1);
-//}
-//
-//TEST(Compare_matrix, matrix_500x600) {
-//    Matrix* a = get_matrix(get_file("matrix1x5", "r"));
-//    if ( a == nullptr ) {
-//        return;
-//    }
-//    auto* b1 = (double*)malloc((a->columns * a->rows) * sizeof(double));
-//    if ( b1 == nullptr ) {
-//        return;
-//    }
-//
-//    double* b2 = shared_memory(a->rows, a->columns);
-//
-//    b1 = transposition(a, b1);
-//    b2 = split_process(a, b2);
-//
-//
-//    EXPECT_EQ(true, correct_transposition(b1, b2, a->columns * a->rows));
-//
-//    munmap(b2, a->rows);
-//    free_memory(a);
-//    free(b1);
-//}
-//
-//TEST(Compare_matrix, matrix_1000x2000) {
-//    Matrix* a = get_matrix(get_file("matrix1x5", "r"));
-//    if ( a == nullptr ) {
-//        return;
-//    }
-//    auto* b1 = (double*)malloc((a->columns * a->rows) * sizeof(double));
-//    if ( b1 == nullptr ) {
-//        return;
-//    }
-//
-//    double* b2 = shared_memory(a->rows, a->columns);
-//
-//    b1 = transposition(a, b1);
-//    b2 = split_process(a, b2);
-//
-//
-//    EXPECT_EQ(true, correct_transposition(b1, b2, a->columns * a->rows));
-//
-//    munmap(b2, a->rows);
-//    free_memory(a);
-//    free(b1);
-//}
-//
-//TEST(Compare_matrix, matrix_10000x5000) {
-//    Matrix* a = get_matrix(get_file("matrix1x5", "r"));
-//    if ( a == nullptr ) {
-//        return;
-//    }
-//    auto* b1 = (double*)malloc((a->columns * a->rows) * sizeof(double));
-//    if ( b1 == nullptr ) {
-//        return;
-//    }
-//
-//    double* b2 = shared_memory(a->rows, a->columns);
-//
-//    b1 = transposition(a, b1);
-//    b2 = split_process(a, b2);
-//
-//
-//    EXPECT_EQ(true, correct_transposition(b1, b2, a->columns * a->rows));
-//
-//    munmap(b2, a->rows);
-//    free_memory(a);
-//    free(b1);
-//}
+TEST(Compare_matrix, matrix_100x100) {
+    Matrix* a = get_matrix(get_file("matrix100x100", "r"));
+    if ( a == nullptr ) {
+        return;
+    }
+    auto* b1 = (double*)malloc((a->columns * a->rows) * sizeof(double));
+    if ( b1 == nullptr ) {
+        return;
+    }
+
+    double* b2 = shared_memory(a->rows, a->columns);
+
+    b1 = transposition(a, b1);
+    b2 = split_process(a, b2);
+
+
+    EXPECT_EQ(true, correct_transposition(b1, b2, a->columns * a->rows));
+
+    munmap(b2, a->rows);
+    free_memory(a);
+    free(b1);
+}
+
+TEST(Compare_matrix, matrix_500x600) {
+    Matrix* a = get_matrix(get_file("matrix500x600", "r"));
+    if ( a == nullptr ) {
+        return;
+    }
+    auto* b1 = (double*)malloc((a->columns * a->rows) * sizeof(double));
+    if ( b1 == nullptr ) {
+        return;
+    }
+
+    double* b2 = shared_memory(a->rows, a->columns);
+
+    b1 = transposition(a, b1);
+    b2 = split_process(a, b2);
+
+
+    EXPECT_EQ(true, correct_transposition(b1, b2, a->columns * a->rows));
+
+    munmap(b2, a->rows);
+    free_memory(a);
+    free(b1);
+}
+
+TEST(Compare_matrix, matrix_1000x2000) {
+    Matrix* a = get_matrix(get_file("matrix1000x2000", "r"));
+    if ( a == nullptr ) {
+        return;
+    }
+    auto* b1 = (double*)malloc((a->columns * a->rows) * sizeof(double));
+    if ( b1 == nullptr ) {
+        return;
+    }
+
+    double* b2 = shared_memory(a->rows, a->columns);
+
+    b1 = transposition(a, b1);
+    b2 = split_process(a, b2);
+
+
+    EXPECT_EQ(true, correct_transposition(b1, b2, a->columns * a->rows));
+
+    munmap(b2, a->rows);
+    free_memory(a);
+    free(b1);
+}
+
+TEST(Compare_matrix, matrix_10000x5000) {
+    Matrix* a = get_matrix(get_file("matrix10000x5000", "r"));
+    if ( a == nullptr ) {
+        return;
+    }
+    auto* b1 = (double*)malloc((a->columns * a->rows) * sizeof(double));
+    if ( b1 == nullptr ) {
+        return;
+    }
+
+    double* b2 = shared_memory(a->rows, a->columns);
+
+    b1 = transposition(a, b1);
+    b2 = split_process(a, b2);
+
+
+    EXPECT_EQ(true, correct_transposition(b1, b2, a->columns * a->rows));
+
+    munmap(b2, a->rows);
+    free_memory(a);
+    free(b1);
+}
 
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);

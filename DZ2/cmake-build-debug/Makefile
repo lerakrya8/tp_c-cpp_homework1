@@ -68,10 +68,10 @@ RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lerakry/tp/program_c++/DZ2
+CMAKE_SOURCE_DIR = /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lerakry/tp/program_c++/DZ2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,9 +111,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles /home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,6 +142,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named DZ2
+
+# Build rule for target.
+DZ2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DZ2
+.PHONY : DZ2
+
+# fast build rule for target.
+DZ2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/build
+.PHONY : DZ2/fast
+
+#=============================================================================
+# Target rules for targets named compute_parallal
+
+# Build rule for target.
+compute_parallal: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compute_parallal
+.PHONY : compute_parallal
+
+# fast build rule for target.
+compute_parallal/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_parallal.dir/build.make CMakeFiles/compute_parallal.dir/build
+.PHONY : compute_parallal/fast
+
+#=============================================================================
+# Target rules for targets named compute_synch
+
+# Build rule for target.
+compute_synch: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compute_synch
+.PHONY : compute_synch
+
+# fast build rule for target.
+compute_synch/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_synch.dir/build.make CMakeFiles/compute_synch.dir/build
+.PHONY : compute_synch/fast
+
+#=============================================================================
 # Target rules for targets named testing
 
 # Build rule for target.
@@ -167,129 +206,170 @@ generator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
 
-#=============================================================================
-# Target rules for targets named DZ2
+project/src/functions.o: project/src/functions.c.o
 
-# Build rule for target.
-DZ2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DZ2
-.PHONY : DZ2
-
-# fast build rule for target.
-DZ2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/build
-.PHONY : DZ2/fast
-
-functions.o: functions.c.o
-
-.PHONY : functions.o
+.PHONY : project/src/functions.o
 
 # target to build an object file
-functions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/functions.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/functions.c.o
-.PHONY : functions.c.o
+project/src/functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_parallal.dir/build.make CMakeFiles/compute_parallal.dir/project/src/functions.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_synch.dir/build.make CMakeFiles/compute_synch.dir/project/src/functions.c.o
+.PHONY : project/src/functions.c.o
 
-functions.i: functions.c.i
+project/src/functions.i: project/src/functions.c.i
 
-.PHONY : functions.i
+.PHONY : project/src/functions.i
 
 # target to preprocess a source file
-functions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/functions.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/functions.c.i
-.PHONY : functions.c.i
+project/src/functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_parallal.dir/build.make CMakeFiles/compute_parallal.dir/project/src/functions.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_synch.dir/build.make CMakeFiles/compute_synch.dir/project/src/functions.c.i
+.PHONY : project/src/functions.c.i
 
-functions.s: functions.c.s
+project/src/functions.s: project/src/functions.c.s
 
-.PHONY : functions.s
+.PHONY : project/src/functions.s
 
 # target to generate assembly for a file
-functions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/functions.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/functions.c.s
-.PHONY : functions.c.s
+project/src/functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_parallal.dir/build.make CMakeFiles/compute_parallal.dir/project/src/functions.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_synch.dir/build.make CMakeFiles/compute_synch.dir/project/src/functions.c.s
+.PHONY : project/src/functions.c.s
 
-main.o: main.c.o
+project/src/functions_parall.o: project/src/functions_parall.c.o
 
-.PHONY : main.o
+.PHONY : project/src/functions_parall.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/main.c.o
-.PHONY : main.c.o
+project/src/functions_parall.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_parallal.dir/build.make CMakeFiles/compute_parallal.dir/project/src/functions_parall.c.o
+.PHONY : project/src/functions_parall.c.o
 
-main.i: main.c.i
+project/src/functions_parall.i: project/src/functions_parall.c.i
 
-.PHONY : main.i
+.PHONY : project/src/functions_parall.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/main.c.i
-.PHONY : main.c.i
+project/src/functions_parall.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_parallal.dir/build.make CMakeFiles/compute_parallal.dir/project/src/functions_parall.c.i
+.PHONY : project/src/functions_parall.c.i
 
-main.s: main.c.s
+project/src/functions_parall.s: project/src/functions_parall.c.s
 
-.PHONY : main.s
+.PHONY : project/src/functions_parall.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/main.c.s
-.PHONY : main.c.s
+project/src/functions_parall.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_parallal.dir/build.make CMakeFiles/compute_parallal.dir/project/src/functions_parall.c.s
+.PHONY : project/src/functions_parall.c.s
 
-main.o: main.cpp.o
+project/src/functions_synch.o: project/src/functions_synch.c.o
 
-.PHONY : main.o
+.PHONY : project/src/functions_synch.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/main.cpp.o
-.PHONY : main.cpp.o
+project/src/functions_synch.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_synch.dir/build.make CMakeFiles/compute_synch.dir/project/src/functions_synch.c.o
+.PHONY : project/src/functions_synch.c.o
 
-main.i: main.cpp.i
+project/src/functions_synch.i: project/src/functions_synch.c.i
 
-.PHONY : main.i
+.PHONY : project/src/functions_synch.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/main.cpp.i
-.PHONY : main.cpp.i
+project/src/functions_synch.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_synch.dir/build.make CMakeFiles/compute_synch.dir/project/src/functions_synch.c.i
+.PHONY : project/src/functions_synch.c.i
 
-main.s: main.cpp.s
+project/src/functions_synch.s: project/src/functions_synch.c.s
 
-.PHONY : main.s
+.PHONY : project/src/functions_synch.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/main.cpp.s
-.PHONY : main.cpp.s
+project/src/functions_synch.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compute_synch.dir/build.make CMakeFiles/compute_synch.dir/project/src/functions_synch.c.s
+.PHONY : project/src/functions_synch.c.s
 
-test.o: test.cpp.o
+project/src/main.o: project/src/main.c.o
 
-.PHONY : test.o
+.PHONY : project/src/main.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/test.cpp.o
-.PHONY : test.cpp.o
+project/src/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/project/src/main.c.o
+.PHONY : project/src/main.c.o
 
-test.i: test.cpp.i
+project/src/main.i: project/src/main.c.i
 
-.PHONY : test.i
+.PHONY : project/src/main.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/test.cpp.i
-.PHONY : test.cpp.i
+project/src/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/project/src/main.c.i
+.PHONY : project/src/main.c.i
 
-test.s: test.cpp.s
+project/src/main.s: project/src/main.c.s
 
-.PHONY : test.s
+.PHONY : project/src/main.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/test.cpp.s
-.PHONY : test.cpp.s
+project/src/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DZ2.dir/build.make CMakeFiles/DZ2.dir/project/src/main.c.s
+.PHONY : project/src/main.c.s
+
+tests/main.o: tests/main.cpp.o
+
+.PHONY : tests/main.o
+
+# target to build an object file
+tests/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/tests/main.cpp.o
+.PHONY : tests/main.cpp.o
+
+tests/main.i: tests/main.cpp.i
+
+.PHONY : tests/main.i
+
+# target to preprocess a source file
+tests/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/tests/main.cpp.i
+.PHONY : tests/main.cpp.i
+
+tests/main.s: tests/main.cpp.s
+
+.PHONY : tests/main.s
+
+# target to generate assembly for a file
+tests/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/tests/main.cpp.s
+.PHONY : tests/main.cpp.s
+
+tests/test.o: tests/test.cpp.o
+
+.PHONY : tests/test.o
+
+# target to build an object file
+tests/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test.cpp.o
+.PHONY : tests/test.cpp.o
+
+tests/test.i: tests/test.cpp.i
+
+.PHONY : tests/test.i
+
+# target to preprocess a source file
+tests/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test.cpp.i
+.PHONY : tests/test.cpp.i
+
+tests/test.s: tests/test.cpp.s
+
+.PHONY : tests/test.s
+
+# target to generate assembly for a file
+tests/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test.cpp.s
+.PHONY : tests/test.cpp.s
 
 # Help Target
 help:
@@ -301,20 +381,28 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... DZ2"
+	@echo "... compute_parallal"
+	@echo "... compute_synch"
 	@echo "... generator"
 	@echo "... testing"
-	@echo "... functions.o"
-	@echo "... functions.i"
-	@echo "... functions.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... project/src/functions.o"
+	@echo "... project/src/functions.i"
+	@echo "... project/src/functions.s"
+	@echo "... project/src/functions_parall.o"
+	@echo "... project/src/functions_parall.i"
+	@echo "... project/src/functions_parall.s"
+	@echo "... project/src/functions_synch.o"
+	@echo "... project/src/functions_synch.i"
+	@echo "... project/src/functions_synch.s"
+	@echo "... project/src/main.o"
+	@echo "... project/src/main.i"
+	@echo "... project/src/main.s"
+	@echo "... tests/main.o"
+	@echo "... tests/main.i"
+	@echo "... tests/main.s"
+	@echo "... tests/test.o"
+	@echo "... tests/test.i"
+	@echo "... tests/test.s"
 .PHONY : help
 
 

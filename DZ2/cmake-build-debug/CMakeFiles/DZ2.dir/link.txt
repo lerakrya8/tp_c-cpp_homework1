@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/DZ2.dir/main.c.o CMakeFiles/DZ2.dir/functions.c.o  -o DZ2 
+/usr/bin/cc -g   CMakeFiles/DZ2.dir/project/src/main.c.o  -o DZ2  -Wl,-rpath,/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug libcompute_parallal.so libcompute_synch.a 

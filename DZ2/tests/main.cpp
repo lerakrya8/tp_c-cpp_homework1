@@ -17,7 +17,7 @@ void matrix_generation(std::ofstream& file, int rows, int columns) {
 }
 
 void create_file(std::string& file_name, int rows, int columns) {
-    std::string file_path = "/home/lerakry/tp/program_c++/DZ2/";
+    std::string file_path = "/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/tests/";
     std::ofstream file;
     file.open(file_path + file_name);
     matrix_generation(file, rows, columns);
@@ -25,10 +25,13 @@ void create_file(std::string& file_name, int rows, int columns) {
 }
 
 
-int main()
+int main(int argc, char *argv[])
 {
-    std::string name_file = "example4x4";
-    create_file(name_file, 4, 4);
+    //std::string name_file = "matrix10000x5000";
+    std::string name_file = argv[1];
+    int rows = atoi(argv[2]);
+    int columns = atoi(argv[3]);
+    create_file(name_file, rows, columns);
 
     return 0;
 }

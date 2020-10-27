@@ -9,17 +9,37 @@ find_package(Threads REQUIRED)
 
 #set(CMAKE_EXE_LINKER_FLAGS "-lgtest_main")
 
+set(DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories("${GTEST_INCLUDE_DIRS}")
 
-add_executable(testing tests/test.cpp project/src/functions.c)
+include_directories(project/headers)
+
+
+add_library(compute_parallal SHARED
+        project/headers/utils.h
+        project/headers/utils_parall.h
+        project/src/functions_parall.c
+        project/src/functions.c)
+
+add_library(compute_synch STATIC
+        project/headers/utils.h
+        project/headers/utils_synch.h
+        project/src/functions.c
+        project/src/functions_synch.c)
+
+
+
+add_executable(testing tests/test.cpp)
 
 target_include_directories(testing PUBLIC project/headers/utils.h)
 
-target_link_libraries(testing ${GTEST_LIBRARIES} Threads::Threads)
+target_link_libraries(testing ${GTEST_LIBRARIES} Threads::Threads compute_synch compute_parallal)
 enable_testing()
 add_test(testing TEST COMMAND tests)
 
-add_executable(generator project/src/main.cpp)
+add_executable(generator tests/main.cpp)
 
-add_executable(DZ2 project/src/main.c project/headers/utils.h project/src/functions.c)
+add_executable(DZ2 project/src/main.c)
+
+target_link_libraries(DZ2 compute_parallal compute_synch)

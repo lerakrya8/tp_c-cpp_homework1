@@ -56,7 +56,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/DZ2.dir/DependInfo.cmake"
+  "CMakeFiles/compute_parallal.dir/DependInfo.cmake"
+  "CMakeFiles/compute_synch.dir/DependInfo.cmake"
   "CMakeFiles/testing.dir/DependInfo.cmake"
   "CMakeFiles/generator.dir/DependInfo.cmake"
-  "CMakeFiles/DZ2.dir/DependInfo.cmake"
   )

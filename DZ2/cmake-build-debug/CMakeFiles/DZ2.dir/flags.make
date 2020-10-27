@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = -I/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/project/headers 
 

@@ -63,10 +63,10 @@ RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lerakry/tp/program_c++/DZ2
+CMAKE_SOURCE_DIR = /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lerakry/tp/program_c++/DZ2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/testing.dir/depend.make
@@ -77,46 +77,33 @@ include CMakeFiles/testing.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testing.dir/flags.make
 
-CMakeFiles/testing.dir/test.cpp.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testing.dir/test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/test.cpp.o -c /home/lerakry/tp/program_c++/DZ2/test.cpp
+CMakeFiles/testing.dir/tests/test.cpp.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/tests/test.cpp.o: ../tests/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testing.dir/tests/test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test.cpp.o -c /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/tests/test.cpp
 
-CMakeFiles/testing.dir/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lerakry/tp/program_c++/DZ2/test.cpp > CMakeFiles/testing.dir/test.cpp.i
+CMakeFiles/testing.dir/tests/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/tests/test.cpp > CMakeFiles/testing.dir/tests/test.cpp.i
 
-CMakeFiles/testing.dir/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lerakry/tp/program_c++/DZ2/test.cpp -o CMakeFiles/testing.dir/test.cpp.s
-
-CMakeFiles/testing.dir/functions.c.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/functions.c.o: ../functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/testing.dir/functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/testing.dir/functions.c.o   -c /home/lerakry/tp/program_c++/DZ2/functions.c
-
-CMakeFiles/testing.dir/functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/testing.dir/functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lerakry/tp/program_c++/DZ2/functions.c > CMakeFiles/testing.dir/functions.c.i
-
-CMakeFiles/testing.dir/functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/testing.dir/functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lerakry/tp/program_c++/DZ2/functions.c -o CMakeFiles/testing.dir/functions.c.s
+CMakeFiles/testing.dir/tests/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/tests/test.cpp -o CMakeFiles/testing.dir/tests/test.cpp.s
 
 # Object files for target testing
 testing_OBJECTS = \
-"CMakeFiles/testing.dir/test.cpp.o" \
-"CMakeFiles/testing.dir/functions.c.o"
+"CMakeFiles/testing.dir/tests/test.cpp.o"
 
 # External object files for target testing
 testing_EXTERNAL_OBJECTS =
 
-testing: CMakeFiles/testing.dir/test.cpp.o
-testing: CMakeFiles/testing.dir/functions.c.o
+testing: CMakeFiles/testing.dir/tests/test.cpp.o
 testing: CMakeFiles/testing.dir/build.make
 testing: /usr/lib/libgtest.so
+testing: libcompute_synch.a
+testing: libcompute_parallal.so
 testing: CMakeFiles/testing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable testing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable testing"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testing.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -129,6 +116,6 @@ CMakeFiles/testing.dir/clean:
 .PHONY : CMakeFiles/testing.dir/clean
 
 CMakeFiles/testing.dir/depend:
-	cd /home/lerakry/tp/program_c++/DZ2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lerakry/tp/program_c++/DZ2 /home/lerakry/tp/program_c++/DZ2 /home/lerakry/tp/program_c++/DZ2/cmake-build-debug /home/lerakry/tp/program_c++/DZ2/cmake-build-debug /home/lerakry/tp/program_c++/DZ2/cmake-build-debug/CMakeFiles/testing.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2 /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2 /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug /home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug/CMakeFiles/testing.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/testing.dir/depend
 

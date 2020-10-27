@@ -3,33 +3,12 @@
 //
 
 #include <stdio.h>
-#include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/wait.h>
-#include <sys/mman.h>
 #include "utils.h"
 
-double* transposition(Matrix* a, double* b) {
-    for ( int i = 0; i < a->rows; ++i ) {
-        for ( int j = 0; j < a->columns; ++j ) {
-            b[i + a->rows * j] = a->matrix[i][j];
-        }
-    }
-    return b;
-}
-
-void transposition_parallel(const Matrix* a, int n_start, int n_end, double* b) {
-    for ( int i = n_start; i < n_end; ++i ) {
-        for ( int j = 0; j < a->columns; ++j ) {
-            b[i + a->rows * j] = a->matrix[i][j];
-        }
-    }
-    exit(0);
-}
-
 FILE* get_file(const char* file_name, const char* params) {
-    const char file_path[] = "/home/lerakry/tp/program_c++/DZ2/";
+    const char file_path[] = "/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/tests/";
 
     char full_file_path[100];
 
@@ -77,60 +56,6 @@ Matrix* get_matrix(FILE* file) {
     return matrix;
 }
 
-int create_processes(int processes_number, int* processes_name) {
-    int result = -1;
-    for ( int i = 0; i < processes_number; ++i ) {
-        int pid = fork();
-        if ( pid == 0 ) {
-            return ++result;
-        }
-        ++result;
-        if ( pid != -1 ) {
-            processes_name[i] = pid;
-        }
-    }
-    return -2;
-}
-
-int generate_process_num(int rows) {
-    if ( rows == 1 ) {
-        return 1;
-    }
-    if ( rows <= 8 ) {
-        return 2;
-    }
-    if ( rows > 8 && rows <= 1000 ) {
-        return rows;
-    }
-    return 1000;
-}
-
-double* split_process(const Matrix* a, double* b) {
-    int processes_number = generate_process_num(a->rows);
-    int* process_names = (int*)malloc(processes_number * sizeof(int));
-    if ( process_names == NULL ) {
-        return NULL;
-    }
-    int j_strings = a->rows / processes_number;
-    int num_pid = create_processes(processes_number, process_names);
-    if ( num_pid != -2 ) {
-        int j_start = num_pid * j_strings;
-        int j_end = j_start + j_strings;
-
-        if (a->rows % processes_number != 0 && num_pid == processes_number - 1) {
-            j_end = a->rows;
-        }
-        transposition_parallel(a, j_start, j_end, b);
-    }
-
-    printf("proc num , %d\n", processes_number);
-    for ( int i = 0; i != processes_number; ++i ) {
-        while ( waitpid(process_names[i], NULL, 0) > 0 ) {} }
-
-    free(process_names);
-    return b;
-}
-
 bool correct_transposition(const double* a1, const double* a2, int matrix_size) {
     for ( int i = 0; i < matrix_size; ++i ) {
         if ( a1[i] != a2[i] ) {
@@ -138,16 +63,6 @@ bool correct_transposition(const double* a1, const double* a2, int matrix_size) 
         }
     }
     return true;
-}
-
-double* shared_memory(int rows, int columns) {
-    double* addr = mmap(NULL, rows * columns * sizeof(double), PROT_READ | PROT_WRITE,
-                MAP_SHARED | MAP_ANONYMOUS, -1, 0);
-    if ( addr == NULL ) {
-        return NULL;
-    }
-
-    return addr;
 }
 
 void free_memory(Matrix* matrix) {

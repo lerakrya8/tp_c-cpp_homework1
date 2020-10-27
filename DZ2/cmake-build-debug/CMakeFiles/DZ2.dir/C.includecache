@@ -6,23 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/lerakry/tp/program_c++/DZ2/functions.c
-stdio.h
--
-unistd.h
--
-string.h
--
-stdlib.h
--
-sys/wait.h
--
-sys/mman.h
--
-utils.h
-/home/lerakry/tp/program_c++/DZ2/utils.h
-
-/home/lerakry/tp/program_c++/DZ2/utils.h
-stdbool.h
--
-

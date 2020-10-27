@@ -1,5 +1,0 @@
-/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/cmake-build-debug/CMakeFiles/testing.dir
-/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/cmake-build-debug/CMakeFiles/test.dir
-/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/cmake-build-debug/CMakeFiles/DZ1.dir
-/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/DZ2.dir/functions.c.o"
-  "CMakeFiles/DZ2.dir/main.c.o"
+  "CMakeFiles/DZ2.dir/project/src/main.c.o"
   "DZ2"
   "DZ2.pdb"
 )
