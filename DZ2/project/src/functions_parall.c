@@ -42,9 +42,9 @@ int generate_process_num(int rows) {
         return 2;
     }
     if ( rows > 8 && rows <= 1000 ) {
-        return rows;
+        return rows / 8;
     }
-    return 1000;
+    return 10;
 }
 
 double* split_process(const Matrix* a, double* b) {
@@ -62,6 +62,7 @@ double* split_process(const Matrix* a, double* b) {
         if (a->rows % processes_number != 0 && num_pid == processes_number - 1) {
             j_end = a->rows;
         }
+
         transposition_parallel(a, j_start, j_end, b);
     }
 
