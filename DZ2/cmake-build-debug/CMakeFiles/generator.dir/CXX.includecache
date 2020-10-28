@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/project/src/main.cpp
+iostream
+-
+string
+-
+random
+-
+fstream
+-
+
