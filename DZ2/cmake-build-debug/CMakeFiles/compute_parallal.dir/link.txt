@@ -1,1 +1,0 @@
-/usr/bin/cc -fPIC -g -Wall -Werror -Wextra -O3 -fprofile-arcs -ftest-coverage -g  -shared -Wl,-soname,libcompute_parallal.so -o libcompute_parallal.so CMakeFiles/compute_parallal.dir/project/src/functions_parall.c.o CMakeFiles/compute_parallal.dir/project/src/functions.c.o 
