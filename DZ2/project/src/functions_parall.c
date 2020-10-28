@@ -38,11 +38,8 @@ int generate_process_num(int rows) {
     if ( rows == 1 ) {
         return 1;
     }
-    if ( rows <= 8 ) {
+    if ( rows < 1000 ) {
         return 2;
-    }
-    if ( rows > 8 && rows <= 1000 ) {
-        return rows / 8;
     }
     return 10;
 }
