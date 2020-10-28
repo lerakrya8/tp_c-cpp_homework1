@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -Wall -O3 -fprofile-arcs -ftest-coverage -g   CMakeFiles/generator.dir/tests/main.cpp.o  -o generator 

@@ -1,0 +1,142 @@
+        -:    0:Source:/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/project/src/functions.c
+        -:    0:Graph:/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug-coverage/CMakeFiles/compute_synch.dir/project/src/functions.c.gcno
+        -:    0:Data:/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug-coverage/CMakeFiles/compute_synch.dir/project/src/functions.c.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by lerakry on 24.10.2020.
+        -:    3://
+        -:    4:
+        -:    5:#include <stdio.h>
+        -:    6:#include <string.h>
+        -:    7:#include <stdlib.h>
+        -:    8:#include "utils.h"
+        -:    9:
+       12:   10:FILE* get_file(const char* file_name, const char* params) {
+       12:   10-block  0
+       12:   11:    const char file_path[] = "/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/tests/";
+        -:   12:
+        -:   13:    char full_file_path[100];
+        -:   14:
+       12:   15:    snprintf(full_file_path, sizeof full_file_path, "%s%s", file_path, file_name);
+        -:   16:
+       12:   17:    FILE* file = fopen(full_file_path, params);
+       12:   17-block  0
+        -:   18:
+       12:   19:    if ( file == NULL ) {
+        -:   20://        perror(file_name);
+        -:   21://        exit(EXIT_FAILURE);
+        -:   22:        return NULL;
+        -:   23:    }
+        2:   24:    return file;
+        2:   24-block  0
+        -:   25:}
+        -:   26:
+       12:   27:Matrix* get_matrix(FILE* file) {
+       12:   27-block  0
+       12:   28:    if ( file == NULL )
+       12:   28-block  0
+        -:   29:        return NULL;
+        -:   30:
+        2:   31:    Matrix* matrix = (Matrix*)malloc(sizeof(Matrix) * 1);
+        2:   32:    if ( matrix == NULL ) {
+        2:   32-block  0
+        -:   33:        return NULL;
+        -:   34:    }
+        -:   35:
+        2:   36:    if ( fscanf(file, "%d", &matrix->rows) != 1 ) {
+        2:   36-block  0
+    #####:   37:        free(matrix);
+    #####:   38:        return NULL;
+    $$$$$:   38-block  0
+        -:   39:    }
+        2:   40:    if ( fscanf(file, "%d", &matrix->columns) != 1 ) {
+        2:   40-block  0
+    #####:   41:        free(matrix);
+    #####:   42:        return NULL;
+    $$$$$:   42-block  0
+        -:   43:    }
+        -:   44:
+        2:   45:    matrix->matrix = (double**) malloc(matrix->rows * sizeof(double*));
+        2:   46:    if ( matrix->matrix == NULL ) {
+        2:   46-block  0
+        2:   46-block  1
+    #####:   47:        free(matrix);
+    #####:   48:        return NULL;
+    $$$$$:   48-block  0
+        -:   49:    }
+       11:   50:    for (int i = 0; i < matrix->rows; ++i) {
+        9:   50-block  0
+       11:   50-block  1
+        2:   50-block  2
+        9:   51:        matrix->matrix[i] = (double*) malloc(matrix->columns * sizeof(double));
+        9:   52:        if ( matrix->matrix[i] == NULL ) {
+        9:   52-block  0
+    #####:   53:            free(matrix->matrix);
+    #####:   54:            free(matrix);
+    #####:   55:            return NULL;
+    $$$$$:   55-block  0
+        -:   56:        }
+        -:   57:    }
+        -:   58:
+        -:   59:    double number;
+       11:   60:    for (int i = 0; i < matrix->rows; ++i) {
+        9:   60-block  0
+       11:   60-block  1
+        9:   60-block  2
+       55:   61:        for (int j = 0; j < matrix->columns && fscanf(file, "%lf", &number) == 1; ++j) {
+       46:   61-block  0
+       55:   61-block  1
+       46:   61-block  2
+       46:   62:            matrix->matrix[i][j] = number;
+        -:   63:        }
+        -:   64:    }
+        -:   65:    return matrix;
+        -:   66:}
+        -:   67:
+    #####:   68:bool correct_transposition(const double* a1, const double* a2, int matrix_size) {
+    $$$$$:   68-block  0
+    #####:   69:    for ( int i = 0; i < matrix_size; ++i ) {
+    $$$$$:   69-block  0
+    $$$$$:   69-block  1
+    $$$$$:   69-block  2
+    #####:   70:        if ( a1[i] != a2[i] ) {
+    $$$$$:   70-block  0
+        -:   71:            return false;
+        -:   72:        }
+        -:   73:    }
+        -:   74:    return true;
+        -:   75:}
+        -:   76:
+        2:   77:void free_memory(Matrix* matrix) {
+        2:   77-block  0
+       11:   78:    for ( int i = 0; i < matrix->rows; ++i ) {
+        2:   78-block  0
+        9:   78-block  1
+       11:   78-block  2
+        9:   79:        free(matrix->matrix[i]);
+        -:   80:    }
+        2:   81:    free(matrix->matrix);
+        2:   82:    free(matrix);
+        2:   83:}
+        -:   84:
+        2:   85:bool right_matrix(double** a, int rows, int columns, const double* b) {
+        2:   85-block  0
+       11:   86:    for ( int i = 0; i < rows; ++i ) {
+        2:   86-block  0
+        9:   86-block  1
+       11:   86-block  2
+        9:   86-block  3
+       55:   87:        for ( int j = 0; j < columns; ++j ) {
+       46:   87-block  0
+       55:   87-block  1
+       46:   88:            if ( a[i][j] != *(b + i * columns + j) ) {
+       46:   88-block  0
+        -:   89:                return false;
+        -:   90:            }
+        -:   91:        }
+        -:   92:    }
+        -:   93:    return true;
+        -:   94:}
+        -:   95:
+        -:   96:

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompute_synch.a  CMakeFiles/compute_synch.dir/project/src/functions.c.o CMakeFiles/compute_synch.dir/project/src/functions_synch.c.o
+/usr/bin/ranlib libcompute_synch.a

@@ -1,0 +1,125 @@
+        -:    0:Source:/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/project/src/functions_parall.c
+        -:    0:Graph:/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug-coverage/CMakeFiles/compute_parallal.dir/project/src/functions_parall.c.gcno
+        -:    0:Data:/home/lerakry/github_tp_c_cpp_h1/tp_c-cpp_homework1/DZ2/cmake-build-debug-coverage/CMakeFiles/compute_parallal.dir/project/src/functions_parall.c.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by lerakry on 27.10.2020.
+        -:    3://
+        -:    4:#include "utils.h"
+        -:    5:#include <sys/wait.h>
+        -:    6:#include <sys/mman.h>
+        -:    7:#include <unistd.h>
+        -:    8:#include <stdio.h>
+        -:    9:#include <string.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include "utils_parall.h"
+        -:   12:
+    #####:   13:void transposition_parallel(const Matrix* a, int n_start, int n_end, double* b) {
+    $$$$$:   13-block  0
+    #####:   14:    for ( int i = n_start; i < n_end; ++i ) {
+    $$$$$:   14-block  0
+    $$$$$:   14-block  1
+    $$$$$:   14-block  2
+    #####:   15:        for ( int j = 0; j < a->columns; ++j ) {
+    $$$$$:   15-block  0
+    $$$$$:   15-block  1
+    #####:   16:            b[i + a->rows * j] = a->matrix[i][j];
+        -:   17:        }
+        -:   18:    }
+    #####:   19:    exit(0);
+        -:   20:}
+        -:   21:
+    #####:   22:int create_processes(int processes_number, int* processes_name) {
+    $$$$$:   22-block  0
+    #####:   23:    int result = -1;
+    #####:   24:    for ( int i = 0; i < processes_number; ++i ) {
+    $$$$$:   24-block  0
+    $$$$$:   24-block  1
+    $$$$$:   24-block  2
+    #####:   25:        int pid = fork();
+    $$$$$:   25-block  0
+    #####:   26:        if ( pid == 0 ) {
+    #####:   27:            return ++result;
+    $$$$$:   27-block  0
+        -:   28:        }
+    #####:   29:        ++result;
+    #####:   30:        if ( pid != -1 ) {
+    $$$$$:   30-block  0
+    #####:   31:            processes_name[i] = pid;
+    $$$$$:   31-block  0
+        -:   32:        }
+        -:   33:    }
+        -:   34:    return -2;
+        -:   35:}
+        -:   36:
+    #####:   37:int generate_process_num(int rows) {
+    $$$$$:   37-block  0
+    #####:   38:    if ( rows == 1 ) {
+    $$$$$:   38-block  0
+        -:   39:        return 1;
+        -:   40:    }
+    #####:   41:    if ( rows <= 8 ) {
+    $$$$$:   41-block  0
+        -:   42:        return 2;
+        -:   43:    }
+    #####:   44:    if ( rows > 8 && rows <= 1000 ) {
+    $$$$$:   44-block  0
+        -:   45:        return rows;
+        -:   46:    }
+    #####:   47:    return 1000;
+    $$$$$:   47-block  0
+        -:   48:}
+        -:   49:
+    #####:   50:double* split_process(const Matrix* a, double* b) {
+    $$$$$:   50-block  0
+    #####:   51:    int processes_number = generate_process_num(a->rows);
+    $$$$$:   51-block  0
+    #####:   52:    int* process_names = (int*)malloc(processes_number * sizeof(int));
+    #####:   53:    if ( process_names == NULL ) {
+        -:   54:        return NULL;
+        -:   55:    }
+    #####:   56:    int j_strings = a->rows / processes_number;
+    #####:   57:    int num_pid = create_processes(processes_number, process_names);
+    $$$$$:   57-block  0
+    #####:   58:    if ( num_pid != -2 ) {
+    #####:   59:        int j_start = num_pid * j_strings;
+    #####:   60:        int j_end = j_start + j_strings;
+        -:   61:
+    #####:   62:        if (a->rows % processes_number != 0 && num_pid == processes_number - 1) {
+    $$$$$:   62-block  0
+    $$$$$:   62-block  1
+    #####:   63:            j_end = a->rows;
+    $$$$$:   63-block  0
+        -:   64:        }
+    #####:   65:        transposition_parallel(a, j_start, j_end, b);
+    $$$$$:   65-block  0
+    $$$$$:   65-block  1
+    $$$$$:   65-block  2
+        -:   66:    }
+        -:   67:
+    #####:   68:    for ( int i = 0; i != processes_number; ++i ) {
+    $$$$$:   68-block  0
+    $$$$$:   68-block  1
+    #####:   69:        while ( waitpid(process_names[i], NULL, 0) > 0 ) {} }
+    $$$$$:   69-block  0
+    $$$$$:   69-block  1
+        -:   70:
+    #####:   71:    free(process_names);
+    #####:   72:    return b;
+    $$$$$:   72-block  0
+        -:   73:}
+        -:   74:
+    #####:   75:double* shared_memory(int rows, int columns) {
+    $$$$$:   75-block  0
+    #####:   76:    double* addr = mmap(NULL, rows * columns * sizeof(double), PROT_READ | PROT_WRITE,
+    $$$$$:   76-block  0
+        -:   77:                        MAP_SHARED | MAP_ANONYMOUS, -1, 0);
+    #####:   78:    if ( addr == NULL ) {
+        -:   79:        return NULL;
+        -:   80:    }
+        -:   81:
+    #####:   82:    return addr;
+    $$$$$:   82-block  0
+        -:   83:}
+        -:   84:
