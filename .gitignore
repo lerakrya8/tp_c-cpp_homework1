@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+DZ2/.idea/
+DZ2/cmake-build-debug/
+DZ2/cmake-build-debug-coverage/
